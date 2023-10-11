@@ -4,9 +4,9 @@ import random
 
 def SA(mat):
 
-    Temp= 1000              # Initial temperature
+    Temp= 200              # Initial temperature
     minT= 1                 # Temperatute stop
-    itrl= 1000              
+    itrl= 150             
     eta = 0.95
     k=1
 
