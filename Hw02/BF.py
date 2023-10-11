@@ -52,7 +52,6 @@ distances =[[ 0, 1, 9,  8, 40], # 0
             [ 8, 35, 30, 0, 5], # 3
             [40, 50, 10, 5, 0]] # 4
 
-# print(distances[0][0])
 
 best_path,dest_dist = BF(distances)
 
