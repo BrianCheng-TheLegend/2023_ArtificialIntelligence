@@ -53,7 +53,7 @@ distances =[[ 0, 1, 9,  8, 40], # 0
             [40, 50, 10, 5, 0]] # 4
 
 
-best_path,dest_dist = BF(distances)
+best_path,best_dist = BF(distances)
 
 print("最短路徑 : ",best_path)
-print("最短距離 : ",dest_dist)
+print("最短距離 : ",best_dist)
