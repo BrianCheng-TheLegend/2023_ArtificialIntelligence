@@ -3,14 +3,10 @@ import math
 import random
 import matplotlib.pyplot as plt
 
-def SA(mat):
+def SA(mat,Temp= 200,itrl= 150,eta=0.95):
     x=[]
     y=[]
 
-    Temp= 200              # Initial temperature
-    minT= 1                 # Temperatute stop
-    itrl= 150             
-    eta = 0.95
     k=1
 
     num_of_cities=len(mat) # number of cities
@@ -54,9 +50,7 @@ def SA(mat):
         k+=1
         x.append(k)
         y.append(best_dist)
-    plt.plot(x,y)
-    plt.show()
-    return best_path,best_dist
+    return best_path,best_dist,x,y
 
 # function for calculate distance
 def distance(size,array):
@@ -76,7 +70,19 @@ distances =[[ 0, 1, 9,  8, 40], # 0
             [40, 50, 10, 5, 0]] # 4
 
 
-best_path,best_dist = SA(distances)
+best_path,best_dist,x1,y1 = SA(distances,Temp= 200,itrl= 150,eta=0.95)
+best_path,best_dist,x2,y2 = SA(distances,Temp= 500,itrl= 150,eta=0.95)
+best_path,best_dist,x3,y3 = SA(distances,Temp= 1000,itrl= 150,eta=0.95)
+
+plt.title("Different Temperature")
+plt.plot(x1,y1,label="Temp= 200")
+plt.plot(x2,y2,label="Temp= 500")
+plt.plot(x3,y3,label="Temp= 1000")
+plt.xlabel("Iteration")
+plt.ylabel("Distance")
+plt.legend()
+plt.show()
+
 
 print("最短路徑 : ",best_path)
 print("最短距離 : ",best_dist)
