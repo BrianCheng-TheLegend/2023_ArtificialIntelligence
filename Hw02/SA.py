@@ -5,7 +5,6 @@ import random
 def SA(mat):
 
     Temp= 200              # Initial temperature
-    minT= 1                # Temperatute stop
     itrl= 150              # set iterations 
     eta = 0.95             # set the temperature every time cool down
     k=1                    # set the initial k
