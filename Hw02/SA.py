@@ -5,10 +5,10 @@ import random
 def SA(mat):
 
     Temp= 200              # Initial temperature
-    minT= 1                 # Temperatute stop
-    itrl= 150             
-    eta = 0.95
-    k=1
+    minT= 1                # Temperatute stop
+    itrl= 150              # set iterations 
+    eta = 0.95             # set the temperature every time cool down
+    k=1                    # set the initial k
 
     num_of_cities=len(mat) # number of cities
     best_path=[]           # shortest path
