@@ -4,3 +4,4 @@
 ## History
 2023/10/11 Hw02 Brute force algorithm and Simulated annealing algorithm.  
 2023/11/02 This repository will store other artificial intelligence practice write by myself. 
+2023/11/15 Add Hw04 training data
