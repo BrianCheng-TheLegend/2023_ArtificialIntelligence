@@ -1,7 +1,6 @@
 # Artificial Intelligence practice
 ### This repository will store "NCKU 2023 Artificial Intelligence" Homeworks and other artificial intelligence practice example, and only "NCKU 2023 Artificial Intelligence" homeworks will held "Hw" title.
 
-## History
-2023/10/11 Hw02 Brute force algorithm and Simulated annealing algorithm.  
-2023/11/02 This repository will store other artificial intelligence practice write by myself. 
-2023/11/15 Add Hw04 training data
+## NCKU 2023 Aritficial Intelligence
+Hw02 Brute force algorithm and Simulated annealing algorithm.  
+Hw04 Decision tree for "fake account" and train data.  
