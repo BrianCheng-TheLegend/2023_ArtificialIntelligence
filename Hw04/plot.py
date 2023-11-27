@@ -40,35 +40,58 @@ reader = csv.reader(file)
 
 
 
-## 2D plot for every two colums
-#######################################################
+# ## 2D plot for every two colums
+# #######################################################
+# a=0.2   #set alpha
+# for num in range(11):
+
+#     file=open('train.csv')
+#     reader = csv.reader(file)
+
+#     i=0
+
+#     for da in reader:
+#         if(i !=0):
+#             x=float(da[num])
+#             y=i
+#             if(da[11]=='1'):
+#                 plt.plot(x,y,'x',color='r',alpha=a)
+#             else:
+#                 plt.plot(x,y,'o',color='b',alpha=a)
+#         else:
+#             plt.xlabel(da[num])
+#             # plt.ylabel(da[num+1])
+#             plt.ylabel('i')
+#         i+=1
+
+#     plt.grid(True)
+#     plt.savefig("./figure/"+"old"+str(num+1)+'.png')
+#     plt.clf()
+# #######################################################
+
 a=0.2   #set alpha
-for num in range(11):
 
-    file=open('train.csv')
-    reader = csv.reader(file)
+file=open('train.csv')
+reader = csv.reader(file)
 
-    i=0
-
-    for da in reader:
-        if(i !=0):
-            x=float(da[num])
-            y=i
+i=0
+for da in reader:
+    if(i !=0):
+        x=float(da[9])
+        y=i
+        if x<=3500:
             if(da[11]=='1'):
                 plt.plot(x,y,'x',color='r',alpha=a)
             else:
                 plt.plot(x,y,'o',color='b',alpha=a)
-        else:
-            plt.xlabel(da[num])
-            # plt.ylabel(da[num+1])
-            plt.ylabel('i')
-        i+=1
-
-    plt.grid(True)
-    plt.savefig("./figure/"+"old"+str(num+1)+'.png')
-    plt.clf()
-#######################################################
-
+    else:
+        plt.xlabel(da[9])
+        # plt.ylabel(da[num+1])
+        plt.ylabel('i')
+    i+=1
+plt.grid(True)
+plt.savefig("./figure/"+"follower"+'.png')
+plt.clf()
 
 
 
