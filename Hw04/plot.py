@@ -4,7 +4,7 @@ file=open('train.csv')
 reader = csv.reader(file)
 for r in reader:
     print(r)
-
+# print(type(reader))
 
 ## 2D plot
 a=0.2   #set alpha
