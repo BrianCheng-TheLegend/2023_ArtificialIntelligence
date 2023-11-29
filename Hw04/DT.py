@@ -22,20 +22,20 @@ class Data_preprocessing:
         self.data=self.original_data.copy()
         self.Change_head(self.data)
 
-    
     # remove the space in str to aviod error message
     def Change_head(self,data):
         new_colums ={ title: title.replace(' ','')for title in data.head()}
         data.rename(columns=new_colums,inplace=True)
     
-    # calculate the gini impurity
-    def Gini_impurity(self,column):
-        P=column.value_counts()/column.shape[0]
-        Gini=1-np.sum(P**2)
-        return Gini
+    # calculate the entropy
+    def Entropy_impurity(self,column):
+        p=column.value_counts()/column.shape[0]
+        Entropy=np.sum(-p*np.log2(p+1e-9))
+        return Entropy
 
 
 
 if __name__ == '__main__':
     pre_data=Data_preprocessing('train.csv')
+    print(pre_data.data)
     # print(pre_data.data.shape)
