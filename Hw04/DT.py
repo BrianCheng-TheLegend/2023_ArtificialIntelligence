@@ -131,6 +131,7 @@ class Decision_tree:
         else:
             pred = data.mean()
         return pred
+    # train
     def train_tree(self,data,y, target_factor, max_depth = None,min_samples_split = None, min_information_gain = 1e-20, counter=0, max_categories = 20):
     # Check that max_categories is fulfilled
         if counter==0:
@@ -205,7 +206,6 @@ class Decision_tree:
             return pred
 
         return subtree
-# train
 
     # predict
     def clasificar_datos(self,observacion, arbol):
@@ -243,11 +243,12 @@ class Decision_tree:
 
 if __name__ == '__main__':
     pre_data=Decision_tree('train.csv')
-    max_depth = 6   
+    max_depth=8
     min_samples_split = 4
     min_information_gain  = 1e-5
     dec=pre_data.train_tree(pre_data.data.data,'fake',True,max_depth=max_depth,min_samples_split=min_samples_split,min_information_gain=min_information_gain)
-    print(dec)
+    print("Tree:",dec)
+    print("Max Depth:",max_depth)
     test_data=Data_preprocessing('test.csv')
     prediction = []
     num_obs = len(test_data.data)
@@ -258,9 +259,14 @@ if __name__ == '__main__':
         pred = pre_data.clasificar_datos(test_data.data.iloc[i,:],dec)
         prediction.append(pred)
 
-    print("Predictions: ",prediction,
-    "\n\nReal values:", test_data.data.fake[:num_obs].to_numpy())
+    # print("Predictions: ",prediction,
+    # "\n\nReal values:", test_data.data.fake[:num_obs].to_numpy())
     a=0
     for i in range(num_obs):
         a+=np.abs(prediction[i]-test_data.data.fake[:num_obs].to_numpy()[i])
-    print("accuracy",((num_obs-a)/num_obs))
+    print("Accuracy:",((num_obs-a)/num_obs))
+    print(num_obs-a)
+
+    import pickle
+    with open("max_depth_8.pkl", "wb") as tf:
+        pickle.dump(dec, tf)
