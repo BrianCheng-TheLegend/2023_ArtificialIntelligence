@@ -227,7 +227,7 @@ class Decision_tree:
             return answer
         else:
             residual_tree = answer
-            return self.clasificar_datos(observacion, answer)
+            return self.clasificar_datos(observacion, residual_tree)
     # save/load
         # import pickle
 
@@ -243,8 +243,8 @@ class Decision_tree:
 
 if __name__ == '__main__':
     pre_data=Decision_tree('train.csv')
-    max_depth = 4
-    min_samples_split = 20
+    max_depth = 6   
+    min_samples_split = 4
     min_information_gain  = 1e-5
     dec=pre_data.train_tree(pre_data.data.data,'fake',True,max_depth=max_depth,min_samples_split=min_samples_split,min_information_gain=min_information_gain)
     print(dec)
@@ -255,7 +255,7 @@ if __name__ == '__main__':
 
     for i in range(num_obs):
         # print(test_data.data.iloc[i,:])
-        pred = pre_data.clasificar_datos(test_data.data.iloc[i,:], dec)
+        pred = pre_data.clasificar_datos(test_data.data.iloc[i,:],dec)
         prediction.append(pred)
 
     print("Predictions: ",prediction,
