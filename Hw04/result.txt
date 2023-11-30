@@ -1,0 +1,12 @@
+
+Tree: {'#followers <=  99': [{'nums/lengthusername <=  0.2': [{'#followers <=  59': [{'#posts <=  2': [1, {'#follows <=  24': [0, {'#followers <=  45': [1, 0]}]}]}, {'descriptionlength <=  12': [{'#posts <=  34': [{'#posts <=  12': [{'#followers <=  68': [1, {'name==username <=  1': [0, 1]}]}, 0]}, 1]}, 0]}]}, 1]}, {'nums/lengthusername <=  0.25': [{'profilepic <=  1': [{'#posts <=  16': [1, 0]}, {'descriptionlength <=  148': [{'descriptionlength <=  1': [{'#followers <=  150': [{'#follows <=  336': [0, 1]}, 0]}, {'#follows <=  1124': [0, {'#follows <=  1155': [1, 0]}]}]}, {'externalURL <=  1': [{'private <=  1': [1, 0]}, 0]}]}]}, {'descriptionlength <=  10': [{'#followers <=  106': [0, {'#posts <=  10': [1, {'nums/lengthusername <=  0.3': [0, 1]}]}]}, {'#followers <=  205': [1, {'nums/lengthusername <=  0.27': [1, 0]}]}]}]}]}
+Max Depth: 8
+Accuracy: 0.8
+96
+
+
+Tree: {'#followers <=  99': [1, {'nums/lengthusername <=  0.25': [0, 1]}]}
+Max Depth: 2
+Accuracy: 0.8416666666666667
+101
+
