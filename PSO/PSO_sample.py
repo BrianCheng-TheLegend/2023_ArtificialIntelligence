@@ -14,6 +14,7 @@ import math
 import matplotlib.pyplot as plt
 import numpy as np
 import time
+from numpy import random
 
 #--- COST FUNCTION ------------------------------------------------------------+
 
@@ -85,11 +86,14 @@ class PSO():
         # establish the swarm
         swarm=[]
         for i in range(0,num_particles):
-            swarm.append(Particle(x0))
+            swarm.append(Particle(np.add(x0,[random.randint(-5,5),random.randint(0,50)])))
         # begin optimization loop
         i=0
+        fig = plt.figure()
         while i < maxiter:
 #########################################################################
+            ax = fig.add_subplot()
+            ax.axis('off')
             # Generate x values
             x_values = np.linspace(-10, 10, 100)  # Adjust the range as needed
 
@@ -99,11 +103,10 @@ class PSO():
             # Plot the function
             plt.plot(x_values, y_values, label='func1(x)')
             for p in swarm:
-                print(p.position_i[1])
                 plt.plot(p.position_i[0], p.position_i[1], 'o',color='r',alpha=0.2)
-            plt.show(block=True)
-            plt.pause(0.5)  # Pause for 0.5 seconds
-            plt.close()
+            plt.show(block=False)
+            plt.pause(0.1)
+            plt.cla()
 #########################################################################
             
             #print i,err_best_g
@@ -120,6 +123,7 @@ class PSO():
             for j in range(0,num_particles):
                 swarm[j].update_velocity(pos_best_g)
                 swarm[j].update_position(bounds)
+            print(i)
             i+=1
 
         # print final results
@@ -132,8 +136,8 @@ class PSO():
 
 #--- RUN ----------------------------------------------------------------------+
 
-initial=[10,100]               # initial starting location [x1,x2...]
-bounds=[(-10,10),(-10,10)]  # input bounds [(x1_min,x1_max),(x2_min,x2_max)...]
-PSO(func1,initial,bounds,num_particles=15,maxiter=10)
+initial=[5,50]               # initial starting location [x1,x2...]
+bounds=[(-10,10),(-10,100)]  # input bounds [(x1_min,x1_max),(x2_min,x2_max)...]
+PSO(func1,initial,bounds,num_particles=15,maxiter=100)
 
 #--- END ----------------------------------------------------------------------+
