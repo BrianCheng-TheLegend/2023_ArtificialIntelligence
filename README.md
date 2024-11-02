@@ -7,3 +7,7 @@
 "PSO" Particle swarm optimization practice.  
 
 ## NCKU 2024 IOT AND BIG DATA FOR SMART MANUFACTURING PROCESS 
+
+## NCKU 2024 Computer vision
+
+"Hw02" [Dataset](https://drive.google.com/drive/folders/1AuSdJrXw5MT3eGz_8pjLB9UnVynhh9gd?usp=drive_link)
